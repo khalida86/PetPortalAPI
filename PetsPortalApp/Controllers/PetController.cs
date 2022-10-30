@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 
 namespace PetsPortalApp.Controllers
 {
@@ -8,20 +9,12 @@ namespace PetsPortalApp.Controllers
     [Route("api/")]
     public class PetController : ControllerBase
     {
-        //PetManager manager = new PetManager();
         private readonly ILogger<PetController> _logger;
         private readonly IPetManager _petManager;
         public PetController(ILogger<PetController> logger, IPetManager petManager)
         {
             _logger = logger;
             _petManager = petManager;
-        }
-
-        [HttpGet("GetByName")]
-        public IAnimal GetByName(string name)
-        {
-            return _petManager.GetByName(name);
-
         }
 
         [HttpGet("GetAll")]
@@ -31,10 +24,17 @@ namespace PetsPortalApp.Controllers
 
         }
 
-        [HttpGet("GetCareSteps")]
-        public List<string> GetCareSteps(string name)
+        [HttpGet("GetById")]
+        public IAnimal GetById(string id)
         {
-            return _petManager.GetCareSteps(name);
+            return _petManager.GetById(id);
+
+        }
+
+        [HttpGet("GetCareSteps")]
+        public List<string> GetCareSteps(string id)
+        {
+            return _petManager.GetCareSteps(id);
 
         }
     }
