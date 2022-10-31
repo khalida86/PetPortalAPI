@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arsal\\source\\repos\\PetsPortalApplication\\PetsPortalApp\\PetsPortalApp\\PetsPortalApp.csproj": {}
+    "C:\\Users\\arsal\\OneDrive\\Documents\\GitHub\\PetPortalAPI\\PetsPortalApp\\PetsPortalApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arsal\\source\\repos\\PetsPortalApplication\\PetsPortalApp\\PetsPortalApp\\PetsPortalApp.csproj": {
+    "C:\\Users\\arsal\\OneDrive\\Documents\\GitHub\\PetPortalAPI\\PetsPortalApp\\PetsPortalApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arsal\\source\\repos\\PetsPortalApplication\\PetsPortalApp\\PetsPortalApp\\PetsPortalApp.csproj",
+        "projectUniqueName": "C:\\Users\\arsal\\OneDrive\\Documents\\GitHub\\PetPortalAPI\\PetsPortalApp\\PetsPortalApp.csproj",
         "projectName": "PetsPortalApp",
-        "projectPath": "C:\\Users\\arsal\\source\\repos\\PetsPortalApplication\\PetsPortalApp\\PetsPortalApp\\PetsPortalApp.csproj",
+        "projectPath": "C:\\Users\\arsal\\OneDrive\\Documents\\GitHub\\PetPortalAPI\\PetsPortalApp\\PetsPortalApp.csproj",
         "packagesPath": "C:\\Users\\arsal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arsal\\source\\repos\\PetsPortalApplication\\PetsPortalApp\\PetsPortalApp\\obj\\",
+        "outputPath": "C:\\Users\\arsal\\OneDrive\\Documents\\GitHub\\PetPortalAPI\\PetsPortalApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arsal\\AppData\\Roaming\\NuGet\\NuGet.Config",

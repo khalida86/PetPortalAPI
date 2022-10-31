@@ -1,4 +1,5 @@
-﻿using PetsPortalApp.Model;
+﻿using Microsoft.OpenApi.Any;
+using PetsPortalApp.Model;
 
 namespace PetsPortalApp
 {
@@ -18,19 +19,19 @@ namespace PetsPortalApp
         {
             List<IAnimal> clonedPets = new List<IAnimal>(Pets);
             return clonedPets;
-            //return Pets;
         }
 
-        public IAnimal GetByName(string name)
+        public IAnimal GetById(string id)
         {
             List<IAnimal> clonedPets = new List<IAnimal>(Pets);
-            return clonedPets.Where(p => string.Equals(p.Name, name)).First(); // return null if not found
+            // return clonedPets.Where(p => string.Equals(p.Name, name)).First(); // return null if not found
+            return clonedPets.Where(p => p.Id.ToString().Equals(id)).First(); // return null if not found
         }
 
-        public List<string> GetCareSteps(string name)
+        public List<string> GetCareSteps(string id)
         {
             List<IAnimal> clonedPets = new List<IAnimal>(Pets);
-            var pet = clonedPets.Where(p => string.Equals(p.Name, name)).First();
+            var pet = clonedPets.Where(p => p.Id.ToString().Equals(id)).First();
             if (pet != null)
             {
                 return pet.GetPetCareNeeds();
