@@ -1,18 +1,20 @@
 ﻿namespace PetsPortalApp.Model
 {
-    public abstract class PetBase : IAnimal
+    public class PetBase : IAnimal
     {
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
         public string Name { get; set; }
         public int Age { get; set; }
         public string Owner { get; set; }
-        public PetBase(Guid id, string name, int age, string owner)
+        public string Type { get; set; }
+        public PetBase(int id, string name, int age, string owner, string type)
         {
             Id = id;
             Name = name;
             Age = age;
             Owner = owner;
-        }
+            Type = type;
+         }
         public virtual string Sedate() => "Sedation Not Required";
         public virtual string Groom() => "Grooming Not Required";
         public virtual string Wash() => "Washing Not Required";

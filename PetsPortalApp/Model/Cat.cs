@@ -2,7 +2,7 @@
 {
     public class Cat : PetBase
     {
-        public Cat(Guid id, string name, int age, string owner) : base(id, name, age, owner) { }
+        public Cat(int id, string name, int age, string owner, string type) : base(id, name, age, owner, type) { }
 
         public override string Sedate() => "Sedate the Cat";
         public override string Groom() => "Groom the Cat";

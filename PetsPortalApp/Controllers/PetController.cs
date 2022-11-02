@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Any;
+using System.Data;
+using System.Data.SqlClient;
+using PetsPortalApp.Model;
 
 namespace PetsPortalApp.Controllers
 {
@@ -18,24 +21,58 @@ namespace PetsPortalApp.Controllers
         }
 
         [HttpGet("GetAll")]
-        public List<IAnimal> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return _petManager.GetAll();
-
+            try
+            {
+                var pets = await _petManager.GetAll();
+                return Ok(pets);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
+        //[HttpGet("{id}" , Name = "GetById")]
         [HttpGet("GetById")]
-        public IAnimal GetById(string id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return _petManager.GetById(id);
-
+            var pet = await _petManager.GetById(id);
+            if (pet == null)
+            {
+                return StatusCode(204, "Pet does not exist");
+            }
+            else
+            {
+                return Ok(pet);
+            }
+            //try
+            //{
+            //    var pet = await _petManager.GetById(id);
+            //    return Ok(pet);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return StatusCode(500, "Pet does not exist");
+            //}
         }
 
         [HttpGet("GetCareSteps")]
-        public List<string> GetCareSteps(string id)
+        public async Task<IActionResult> GetCareSteps(int id)
         {
-            return _petManager.GetCareSteps(id);
+   
+            IEnumerable<string> careSteps = _petManager.GetCareSteps(id);
 
+            if(careSteps == null)
+            {
+                return StatusCode(204, "Pet or Pet type does not exist");
+            }
+            else
+            {
+                return Ok(careSteps);
+            }
+            
         }
     }
 }
